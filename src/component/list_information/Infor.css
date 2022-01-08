@@ -1,0 +1,25 @@
+
+.cart__infor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 6rem;
+}
+
+.cart__infor .cart__infor-item{
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 650px){
+    .cart__infor{
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .cart__infor{
+        padding: 0 0.3rem;
+    }
+}

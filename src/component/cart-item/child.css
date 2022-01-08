@@ -1,0 +1,41 @@
+.cart__infor-item{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgb(222, 238, 189);
+    border: 1px solid black;
+
+}
+
+.cart__infor-item .delete{
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 650px){
+    .cart__infor-item{
+        width: 100%;
+    }
+
+    .cart__infor-item .text{
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .cart__infor-item{
+        width: 100%;
+        flex-direction: column;
+        padding: 0 ;
+    }
+
+    .cart__infor-item .text{
+        margin-bottom: 2rem;
+    }
+}
+    
