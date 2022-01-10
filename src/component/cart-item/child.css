@@ -9,12 +9,18 @@
     border: 1px solid black;
 
 }
-
+.cart__infor-item .text{
+    cursor: pointer;
+}
 .cart__infor-item .delete{
     font-size: 20px;
     font-weight: bold;
     color: red;
     cursor: pointer;
+}
+
+.cart__infor-item a{
+    text-decoration: none;
 }
 
 @media screen and (max-width: 650px){

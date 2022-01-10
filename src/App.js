@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-import { Form, Infor } from './component'
+import { Form, Infor, Header, Child, User} from './component'
 import { v4 as uuidv4 } from 'uuid';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 // const information = [
 //   {
@@ -26,11 +28,16 @@ function App() {
     console.log(newList);
   }
 
-  const deleteItem = (id) => {
-    const newList = listInfor.filter((item) => {
-      return item.id !== id;
-    })
-    setListinfor(newList);
+  const handleItem = (id, action) => {
+    if (action === 1) {
+      <Link to="/register" />
+    }
+    else {
+      const newList = listInfor.filter((item) => {
+        return item.id !== id;
+      })
+      setListinfor(newList);
+    }
   }
 
   useEffect(() => {
@@ -43,8 +50,18 @@ function App() {
 
   return (
     <div className="App">
-      <Form giveInfor={snhanInfor}/>
-      <Infor information={listInfor} deleteItem = {deleteItem} />
+      <Router >
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route path="contact" element={<Infor information={listInfor} handleItem={handleItem} />} />
+            <Route path="form" element={<Form giveInfor={snhanInfor} />} />
+            <Route path = ":contactId" element = { <User />} />
+          </Route>
+        </Routes>
+      </Router>
+      
+      {/* <Form giveInfor={snhanInfor} />
+      <Infor information={listInfor} handleItem={handleItem} /> */}
     </div>
   );
 }

@@ -1,17 +1,18 @@
 import React from 'react'
 import {Child} from '../../component'
 import './Infor.css'
-const Infor = ({ information, deleteItem }) => {
+const Infor = ({ information, handleItem }) => {
 
-    const deleteInfor = (id) => {
-        deleteItem(id);
+    const handleInfor = (id, action) => {
+        handleItem(id, action);
     }
     
     return (
         <div className = 'cart__infor section__padding' >
             {information.map((item) => 
-                <Child infor={item} giveId={deleteInfor}/>
+                <Child infor={item} giveId={handleInfor}/>
             )}
+            
         </div>
     )
 }
